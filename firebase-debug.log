@@ -1,0 +1,21 @@
+[debug] [2021-10-13T02:31:16.730Z] ----------------------------------------------------------------------
+[debug] [2021-10-13T02:31:16.732Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2021-10-13T02:31:16.733Z] CLI Version:   9.20.0
+[debug] [2021-10-13T02:31:16.733Z] Platform:      darwin
+[debug] [2021-10-13T02:31:16.733Z] Node Version:  v14.17.6
+[debug] [2021-10-13T02:31:16.734Z] Time:          Tue Oct 12 2021 21:31:16 GMT-0500 (Central Daylight Time)
+[debug] [2021-10-13T02:31:16.734Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-13T02:31:16.741Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-13T02:31:16.742Z] > authorizing via signed-in user (bagelrator@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/bradenstrother/Development/Github/nextfire-app
+
