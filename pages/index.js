@@ -11,10 +11,10 @@ export default function Home() {
 }
 
 // import Head from 'next/head';
-// import styles from '../styles/Home.module.css';
+// import styles from '@styles/Home.module.css';
 // import Link from 'next/link';
 
-// import Loader from '../components/Loader';
+// import Loader from '@components/Loader';
 
 // export default function Home() {
 //   return (
