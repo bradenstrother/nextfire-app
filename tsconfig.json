@@ -21,8 +21,11 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "pages/api/hello.js", "lib/firebase.js", "pages/index.js", "pages/enter.js", "papages/admin/[slug].js "pagpages/[username]/index.js"components/Navbar.jsx"  ],
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx"
+    // "pages/api/hello.js", "lib/firebase.js", "pages/index.js", "pages/enter.js", "papages/admin/[slug].js", "pages/[username]/index.js", "components/Navbar.js"  
+  ],
   "exclude": [
     "node_modules"
   ]
