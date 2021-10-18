@@ -1,6 +1,7 @@
 import styles from '../../styles/Admin.module.css';
 import AuthCheck from '../../components/AuthCheck';
 import { firestore, auth, serverTimestamp } from '../../lib/firebase';
+import ImageUploader from '../../components/ImageUploader';
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
@@ -65,7 +66,9 @@ function PostForm({ defaultValues, postRef, preview }) {
   // takes an object with config options are it's argument.
   // defaultValues is the data from the firestore doc.
   // mode: 'onChange' means any time a form value changes it will rerender and revalidate the form.
-  const { register, handleSubmit, reset, watch } = useForm({ defaultValues, mode: 'onChange' });
+  const { register, handleSubmit, reset, watch, formState } = useForm({ defaultValues, mode: 'onChange' });
+
+  const { isValid, isDirty, errors } = formState;
 
   const updatePost = async ({ content, published }) => {
     await postRef.update({
@@ -85,12 +88,22 @@ function PostForm({ defaultValues, postRef, preview }) {
         </div>
       )}
       <div className={preview ? styles.hidden : styles.controls}>
-        <textarea {...register('content', {required: true})}></textarea>
+
+        <ImageUploader />
+        
+        <textarea name="content" {...register('content', {
+          required: {value: true, message: 'content is required'},
+          maxLength: {value: 20000, message: 'content is too long'},
+          minLength: {value: 10, message: 'content is too short'}
+        })}></textarea>
+
+          {errors.content && <p className="text-danger">{errors.content.message}</p>}
+
         <fieldset>
           <input className={styles.checkbox} name="published" type="checkbox" {...register("published", {required: true})} />
           <label>Published</label>
         </fieldset>
-        <button type="submit" className="btn-green">
+        <button type="submit" className="btn-green" disabled={!isDirty || !isValid}>
           Save Changes
         </button>
       </div>
